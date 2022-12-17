@@ -1,0 +1,968 @@
+:begin
+CREATE CONSTRAINT UNIQUE_IMPORT_NAME FOR (node:`UNIQUE IMPORT LABEL`) REQUIRE (node.`UNIQUE IMPORT ID`) IS UNIQUE;
+:commit
+CALL db.awaitIndexes(300);
+:begin
+UNWIND [{_id:29, properties:{O_1:[3, 52, 54, 57], Clause_ID:"GB50157-2013-9.7.6", C_1:[3, 4, 51, 55, 53, 56], name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.6`:事件节点;
+UNWIND [{_id:4, properties:{name:"12m"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50490-2009-7.3.6`:`GB50157-2013-9.7.7`;
+UNWIND [{_id:20, properties:{O_2:[8, 10, 29], Clause_ID:"GB50157-2013-9.7.4", C_1:[8, 10, 12, 5, 6], C_2:[8, 10, 12, 5, 7], name:"事件1"}}, {_id:21, properties:{O_2:[8, 10, 12, 30], Clause_ID:"GB50157-2013-9.7.4", C_1:[8, 10, 12, 5, 6], C_2:[8, 10, 12, 5, 7], name:"事件2"}}, {_id:22, properties:{O_2:[8, 10, 29], Clause_ID:"GB50157-2013-9.7.4", C_1:[27, 28, 12, 5, 6], C_2:[27, 28, 12, 5, 7], name:"事件3"}}, {_id:23, properties:{O_2:[8, 10, 12, 30], Clause_ID:"GB50157-2013-9.7.4", C_1:[27, 28, 12, 5, 6], C_2:[27, 28, 12, 5, 7], name:"事件4"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.4`:事件节点;
+UNWIND [{_id:6, properties:{name:"运行方向"}}, {_id:7, properties:{name:"上行"}}, {_id:8, properties:{name:"下行"}}, {_id:9, properties:{name:"站台"}}, {_id:10, properties:{name:"站厅"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50490-2009-7.3.6`:`GB50157-2013-9.7.4`;
+UNWIND [{_id:104, properties:{name:"…按…设置…"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:复杂节点:`GB50157-2013-25.1.18`:`GB50157-2013-25.2.16`;
+UNWIND [{_id:1, properties:{name:"出入口"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50490-2009-7.3.6`:`GB50157-2013-25.3.1`;
+UNWIND [{_id:134, properties:{name:"建筑", 编号:"第3节"}}, {_id:137, properties:{name:"楼梯、自动扶梯、电梯和站台门", 编号:"第7节"}}, {_id:138, properties:{name:"车站无障碍设施", 编号:"第8节"}}, {_id:140, properties:{name:"自动扶梯和自动人行道", 编号:"第1节"}}, {_id:141, properties:{name:"电梯", 编号:"第2节"}}, {_id:142, properties:{name:"轮椅升降机", 编号:"第3节"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:节;
+UNWIND [{_id:3, properties:{name:"自动扶梯"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.7`:`GB50490-2009-7.3.6`:`GB50157-2013-25.1.3`:`GB50157-2013-25.1.19`:`GB50157-2013-25.1.6`:`GB50157-2013-25.1.18`:`GB50157-2013-9.7.4`:`GB50157-2013-25.1.15`:`GB50157-2013-25.1.1`:`GB50157-2013-9.7.6`:`GB50157-2013-9.7.7`:`GB50157-2013-25.1.10`;
+UNWIND [{_id:100, properties:{name:"产品要求"}}, {_id:101, properties:{name:"预埋件"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.18`:`GB50157-2013-25.2.16`;
+UNWIND [{_id:42, properties:{name:"安装位置"}}, {_id:44, properties:{name:"结构诱导缝"}}, {_id:45, properties:{name:"结构变形缝"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.17`:`GB50157-2013-25.1.19`;
+UNWIND [{_id:41, properties:{name:"自动人行道"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.7`:`GB50157-2013-25.1.19`:`GB50157-2013-25.1.18`:`GB50157-2013-25.1.1`:`GB50157-2013-25.1.10`;
+UNWIND [{_id:38, properties:{O_1:[60, 67, 36, 60, 68, 74], Clause_ID:"GB50157-2013-9.7.7", name:"事件1"}}, {_id:39, properties:{O_1:[60, 67, 63, 61, 53, 75], Clause_ID:"GB50157-2013-9.7.7", name:"事件2"}}, {_id:40, properties:{O_1:[60, 67, 70, 71, 69, 73], Clause_ID:"GB50157-2013-9.7.7", C_1:[62], name:"事件3"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:事件节点:`GB50157-2013-9.7.7`;
+UNWIND [{_id:71, properties:{name:"机坑"}}, {_id:72, properties:{name:"重力流排水"}}, {_id:73, properties:{name:"集水坑"}}, {_id:74, properties:{name:"排水设施"}}, {_id:75, properties:{name:"油水分离设备"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.7`;
+UNWIND [{_id:126, properties:{name:"平台"}}, {_id:127, properties:{name:"防滑材料"}}, {_id:128, properties:{name:"护栏"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.3.5`;
+UNWIND [{_id:148, properties:{name:"选型要求"}}, {_id:149, properties:{name:"主要技术参数要求"}}, {_id:150, properties:{name:"布局要求"}}, {_id:151, properties:{name:"选型要求"}}, {_id:152, properties:{name:"主要技术参数要求"}}, {_id:153, properties:{name:"布局要求"}}, {_id:154, properties:{name:"选型要求"}}, {_id:155, properties:{name:"主要技术参数要求"}}, {_id:156, properties:{name:"布局要求"}}, {_id:157, properties:{name:"选型要求"}}, {_id:158, properties:{name:"主要技术参数要求"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:审查点;
+UNWIND [{_id:13, properties:{O_1:[0, 2, 5, 6], Clause_ID:"GB50490-2009-7.3.6", C_1:[0, 1, 49], name:"事件1"}}, {_id:14, properties:{O_2:[0, 2, 5, 7], Clause_ID:"GB50490-2009-7.3.6", C_1:[0, 1, 48], C_2:[0, 2, 5, 6], name:"事件2"}}, {_id:15, properties:{O_1:[8, 10, 12, 5, 6], Clause_ID:"GB50490-2009-7.3.6", name:"事件3"}}, {_id:16, properties:{O_2:[8, 10, 12, 5, 7], Clause_ID:"GB50490-2009-7.3.6", C_1:[9, 11, 50], C_2:[8, 10, 12, 5, 6], name:"事件4"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50490-2009-7.3.6`:事件节点;
+UNWIND [{_id:67, properties:{name:"事故疏散"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.6`;
+UNWIND [{_id:59, properties:{name:"严寒地区"}}, {_id:61, properties:{name:"上下平台"}}, {_id:62, properties:{name:"防滑措施"}}, {_id:63, properties:{name:"防止冰雪积聚设施"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.3`;
+UNWIND [{_id:54, properties:{name:"地铁"}}, {_id:56, properties:{name:"公共交通型"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.1`;
+UNWIND [{_id:17, properties:{name:"地面"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.4`;
+UNWIND [{_id:31, properties:{name:"工作点"}}, {_id:32, properties:{name:"踏步"}}, {_id:33, properties:{name:"16m"}}, {_id:34, properties:{name:"8m"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.7`;
+UNWIND [{_id:85, properties:{O_1:[146, 148], Clause_ID:"GB50157-2013-25.1.10", name:"事件1"}}, {_id:86, properties:{O_1:[147, 148], Clause_ID:"GB50157-2013-25.1.10", name:"事件2"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:事件节点:`GB50157-2013-25.1.10`;
+UNWIND [{_id:24, properties:{name:"扶手带"}}, {_id:27, properties:{E_ID:1, name:"防碰撞安全装置"}}, {_id:30, properties:{name:"400mm"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.6`;
+UNWIND [{_id:65, properties:{O_1:[109, 110], C_1:[107, 101, 108], Clause_ID:"GB50157-2013-25.1.3", name:"事件1"}}, {_id:66, properties:{O_1:[109, 111], C_1:[106, 107], Clause_ID:"GB50157-2013-25.1.3", name:"事件2"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.3`:事件节点;
+UNWIND [{_id:68, properties:{name:"供电等级"}}, {_id:69, properties:{name:"一级负荷"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.8`:`GB50157-2013-25.1.6`;
+UNWIND [{_id:125, properties:{O_1:[219, 216, 217, 108], Clause_ID:"GB50157-2013-25.3.1", name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.3.1`:事件节点;
+UNWIND [{_id:55, properties:{name:"选型"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.3`:`GB50157-2013-25.3.1`:`GB50157-2013-25.1.1`;
+UNWIND [{_id:57, properties:{O_1:[99, 101, 103], Clause_ID:"GB50157-2013-25.1.1", name:"事件1"}}, {_id:58, properties:{O_1:[100, 102, 103], Clause_ID:"GB50157-2013-25.1.1", name:"事件2"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.1`:事件节点;
+UNWIND [{_id:95, properties:{O_2:[151, 152, 153], C_1:[156, 160], Clause_ID:"GB50157-2013-25.1.15", C_2:[157, 161], name:"事件1"}}, {_id:96, properties:{O_2:[151, 152, 154], C_1:[156, 160], Clause_ID:"GB50157-2013-25.1.15", C_2:[157, 49], name:"事件2"}}, {_id:97, properties:{O_1:[151, 152, 154], C_1:[156, 159], Clause_ID:"GB50157-2013-25.1.15", name:"事件3"}}, {_id:98, properties:{O_1:[151, 152, 155], C_1:[156, 158], Clause_ID:"GB50157-2013-25.1.15", name:"事件4"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.15`:事件节点;
+UNWIND [{_id:78, properties:{O_1:[141, 139, 137], Clause_ID:"GB50157-2013-25.1.7", name:"事件1"}}, {_id:79, properties:{O_1:[140, 139, 137], Clause_ID:"GB50157-2013-25.1.7", name:"事件2"}}, {_id:80, properties:{O_2:[141, 138, 134], C_1:[141, 139, 136], Clause_ID:"GB50157-2013-25.1.7", C_2:[141, 138, 135], name:"事件3"}}, {_id:81, properties:{O_2:[140, 138, 134], C_1:[140, 139, 136], Clause_ID:"GB50157-2013-25.1.7", C_2:[140, 138, 135], name:"事件4"}}, {_id:82, properties:{O_1:[133], Clause_ID:"GB50157-2013-25.1.7", name:"事件5"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.7`:事件节点;
+UNWIND [{_id:131, properties:{O_1:[222, 224], C_1:[221, 223], Clause_ID:"GB50157-2013-25.3.5", name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.3.5`:事件节点;
+UNWIND [{_id:105, properties:{O_1:[180, 185, 186, 187], C_1:[180, 182, 183, 184], Clause_ID:"GB50157-2013-25.1.18", name:"事件1"}}, {_id:106, properties:{O_1:[181, 185, 186, 187], C_1:[181, 182, 183, 184], Clause_ID:"GB50157-2013-25.1.18", name:"事件2"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.18`:事件节点;
+UNWIND [{_id:46, properties:{O_1:[80, 82], Clause_ID:"GB50157-2013-25.1.19", name:"事件1"}}, {_id:47, properties:{O_1:[80, 84], Clause_ID:"GB50157-2013-25.1.19", name:"事件2"}}, {_id:48, properties:{O_1:[80, 86], C_1:[80, 83], Clause_ID:"GB50157-2013-25.1.19", name:"事件3"}}, {_id:49, properties:{O_1:[80, 86], C_1:[80, 85], Clause_ID:"GB50157-2013-25.1.19", name:"事件4"}}, {_id:50, properties:{O_1:[81, 82], Clause_ID:"GB50157-2013-25.1.19", name:"事件5"}}, {_id:51, properties:{O_1:[81, 84], Clause_ID:"GB50157-2013-25.1.19", name:"事件6"}}, {_id:52, properties:{O_1:[81, 86], C_1:[81, 83], Clause_ID:"GB50157-2013-25.1.19", name:"事件7"}}, {_id:53, properties:{O_1:[81, 86], C_1:[81, 85], Clause_ID:"GB50157-2013-25.1.19", name:"事件8"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.19`:事件节点;
+UNWIND [{_id:70, properties:{O_1:[118, 119], C_1:[117], Clause_ID:"GB50157-2013-25.1.6", name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.6`:事件节点;
+UNWIND [{_id:115, properties:{name:"电梯井道"}}, {_id:116, properties:{name:"预留孔"}}, {_id:117, properties:{name:"预留槽"}}, {_id:118, properties:{name:"起重吊环"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.16`;
+UNWIND [{_id:113, properties:{name:"0.63m/s"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.11`;
+UNWIND [{_id:132, properties:{name:"城市轨道交通技术规范", 编号:"GB50490-2009"}}, {_id:135, properties:{name:"地铁设计规范", 编号:"GB50157-2013"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:规范;
+UNWIND [{_id:2, properties:{name:"提升高度"}}, {_id:5, properties:{name:"6m"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50490-2009-7.3.6`:`GB50157-2013-25.1.15`;
+UNWIND [{_id:110, properties:{name:"额定载重"}}, {_id:111, properties:{name:"800kg"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.10`;
+UNWIND [{_id:122, properties:{O_1:[213], Clause_ID:"GB50157-2013-9.8.2", name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.8.2`:事件节点;
+UNWIND [{_id:25, properties:{name:"…与…的距离"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:复杂节点:`GB50157-2013-9.7.6`:`GB50157-2013-9.7.7`;
+UNWIND [{_id:99, properties:{name:"支点"}}, {_id:102, properties:{name:"吊装条件"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.18`;
+UNWIND [{_id:43, properties:{name:"构造措施"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.19`;
+UNWIND [{_id:64, properties:{E_ID:1, name:"顺序1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.3`:顺序节点;
+UNWIND [{_id:0, properties:{name:"车站"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50490-2009-7.3.6`:`GB50157-2013-9.8.2`;
+UNWIND [{_id:124, properties:{E_ID:219, name:"顺序1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.3.1`:顺序节点;
+UNWIND [{_id:143, properties:{name:"乘客使用的站内设备"}}, {_id:144, properties:{name:"自动人行道"}}, {_id:145, properties:{name:"自动扶梯"}}, {_id:146, properties:{name:"电梯"}}, {_id:147, properties:{name:"轮椅升降机"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:审查对象;
+UNWIND [{_id:112, properties:{O_1:[194, 197], Clause_ID:"GB50157-2013-25.2.10", name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.10`:事件节点;
+UNWIND [{_id:76, properties:{E_ID:138, name:"顺序1"}}, {_id:77, properties:{E_ID:139, name:"顺序2"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.7`:顺序节点;
+UNWIND [{_id:129, properties:{E_ID:221, name:"顺序1"}}, {_id:130, properties:{E_ID:222, name:"顺序2"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.3.5`:顺序节点;
+UNWIND [{_id:114, properties:{O_1:[199, 200], Clause_ID:"GB50157-2013-25.2.11", name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:事件节点:`GB50157-2013-25.2.11`;
+UNWIND [{_id:107, properties:{name:"电梯"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.8`:`GB50157-2013-25.2.17`:`GB50157-2013-25.2.10`:`GB50157-2013-25.2.11`;
+UNWIND [{_id:119, properties:{O_3:[206, 186, 205], C_1:[206, 186, 187], Clause_ID:"GB50157-2013-25.2.16", C_3:[206, 186, 204], C_2:[206, 186, 203], name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.16`:事件节点;
+UNWIND [{_id:120, properties:{O_1:[202, 85], C_1:[202, 82], Clause_ID:"GB50157-2013-25.2.17", name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.17`:事件节点;
+UNWIND [{_id:87, properties:{name:"水平梯级"}}, {_id:88, properties:{name:"数量"}}, {_id:90, properties:{name:"0.65m/s"}}, {_id:91, properties:{name:"0.5m/s"}}, {_id:92, properties:{name:2}}, {_id:93, properties:{name:3}}, {_id:94, properties:{name:4}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.15`;
+UNWIND [{_id:11, properties:{name:"…与…之间"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:复杂节点:`GB50490-2009-7.3.6`:`GB50157-2013-9.7.4`:`GB50157-2013-9.7.6`;
+UNWIND [{_id:83, properties:{name:"传动设备"}}, {_id:84, properties:{name:"阻燃材料"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.10`;
+UNWIND [{_id:103, properties:{name:"…按…预留…"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:复杂节点:`GB50157-2013-25.1.18`;
+UNWIND [{_id:12, properties:{name:"…与…的高差"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:复杂节点:`GB50490-2009-7.3.6`;
+UNWIND [{_id:89, properties:{name:"额定速度"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.15`:`GB50157-2013-25.2.11`;
+UNWIND [{_id:108, properties:{name:"消防梯"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.8`;
+UNWIND [{_id:18, properties:{name:"楼梯"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.4`:`GB50157-2013-9.7.7`;
+UNWIND [{_id:121, properties:{name:"无障碍电梯"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.8.2`;
+UNWIND [{_id:26, properties:{E_ID:4, name:"障碍物"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.6`:`GB50157-2013-9.7.7`;
+UNWIND [{_id:109, properties:{O_1:[193, 119], C_1:[192], Clause_ID:"GB50157-2013-25.2.8", name:"事件1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.2.8`:事件节点;
+UNWIND [{_id:19, properties:{E_ID:30, name:"顺序1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.4`:顺序节点;
+UNWIND [{_id:133, properties:{name:"土建工程", 编号:"第7章"}}, {_id:136, properties:{name:"车站建筑", 编号:"第9章"}}, {_id:139, properties:{name:"站内客运设施", 编号:"第25章"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:章;
+UNWIND [{_id:60, properties:{name:"室外型"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.1.3`:`GB50157-2013-25.3.1`;
+UNWIND [{_id:35, properties:{E_ID:63, name:"顺序1"}}, {_id:36, properties:{E_ID:64, name:"顺序2"}}, {_id:37, properties:{E_ID:71, name:"顺序3"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:顺序节点:`GB50157-2013-9.7.7`;
+UNWIND [{_id:123, properties:{name:"轮椅升降机"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-25.3.5`:`GB50157-2013-25.3.1`;
+UNWIND [{_id:28, properties:{E_ID:4, name:"顺序1"}}] AS row
+CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:`GB50157-2013-9.7.6`:顺序节点;
+:commit
+:begin
+UNWIND [{start: {_id:113}, end: {_id:114}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:前面]->(end) SET r += row.properties;
+UNWIND [{start: {_id:111}, end: {_id:112}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:4}, end: {_id:14}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:7}, end: {_id:14}, properties:{}}, {start: {_id:7}, end: {_id:16}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:118}, end: {_id:119}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_3]->(end) SET r += row.properties;
+UNWIND [{start: {_id:158}, end: {_id:131}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:137}, end: {_id:38}, properties:{}}, {start: {_id:137}, end: {_id:39}, properties:{}}, {start: {_id:137}, end: {_id:40}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:41}, end: {_id:42}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:20}, end: {_id:21}, properties:{}}, {start: {_id:21}, end: {_id:20}, properties:{}}, {start: {_id:22}, end: {_id:23}, properties:{}}, {start: {_id:23}, end: {_id:22}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:OR]->(end) SET r += row.properties;
+UNWIND [{start: {_id:137}, end: {_id:20}, properties:{}}, {start: {_id:137}, end: {_id:21}, properties:{}}, {start: {_id:137}, end: {_id:22}, properties:{}}, {start: {_id:137}, end: {_id:23}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:103}, end: {_id:102}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_3]->(end) SET r += row.properties;
+UNWIND [{start: {_id:137}, end: {_id:29}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:107}, end: {_id:68}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:126}, end: {_id:126}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:四周]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:71}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:128}, end: {_id:131}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:72}, end: {_id:78}, properties:{}}, {start: {_id:72}, end: {_id:79}, properties:{}}, {start: {_id:75}, end: {_id:82}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:0}, end: {_id:1}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:聚合]->(end) SET r += row.properties;
+UNWIND [{start: {_id:74}, end: {_id:80}, properties:{}}, {start: {_id:74}, end: {_id:81}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:30}, end: {_id:29}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:56}, end: {_id:57}, properties:{}}, {start: {_id:56}, end: {_id:58}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:相对布置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:55}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:62}, end: {_id:65}, properties:{}}, {start: {_id:63}, end: {_id:66}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:66}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:26}, end: {_id:25}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:157}, end: {_id:125}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:25}, end: {_id:33}, properties:{}}, {start: {_id:25}, end: {_id:34}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`≥`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:107}, end: {_id:110}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:17}, end: {_id:11}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:59}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:71}, end: {_id:72}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:采用]->(end) SET r += row.properties;
+UNWIND [{start: {_id:126}, end: {_id:127}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:采用]->(end) SET r += row.properties;
+UNWIND [{start: {_id:54}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:24}, end: {_id:11}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:154}, end: {_id:109}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:108}, end: {_id:109}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:107}, end: {_id:108}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:兼做]->(end) SET r += row.properties;
+UNWIND [{start: {_id:0}, end: {_id:121}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:设置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:24}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:组合]->(end) SET r += row.properties;
+UNWIND [{start: {_id:6}, end: {_id:7}, properties:{}}, {start: {_id:6}, end: {_id:8}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:是]->(end) SET r += row.properties;
+UNWIND [{start: {_id:121}, end: {_id:122}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:41}, end: {_id:83}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:组合]->(end) SET r += row.properties;
+UNWIND [{start: {_id:87}, end: {_id:88}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:9}, end: {_id:12}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:10}, end: {_id:12}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:68}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:12}, end: {_id:5}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`>`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:71}, end: {_id:71}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:外]->(end) SET r += row.properties;
+UNWIND [{start: {_id:18}, end: {_id:40}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:77}, end: {_id:71}, properties:{}}, {start: {_id:76}, end: {_id:71}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:Backward]->(end) SET r += row.properties;
+UNWIND [{start: {_id:129}, end: {_id:126}, properties:{}}, {start: {_id:130}, end: {_id:126}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:Backward]->(end) SET r += row.properties;
+UNWIND [{start: {_id:91}, end: {_id:95}, properties:{}}, {start: {_id:91}, end: {_id:96}, properties:{}}, {start: {_id:90}, end: {_id:97}, properties:{}}, {start: {_id:90}, end: {_id:98}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:19}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:Forward]->(end) SET r += row.properties;
+UNWIND [{start: {_id:1}, end: {_id:123}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:42}, end: {_id:43}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:采用]->(end) SET r += row.properties;
+UNWIND [{start: {_id:102}, end: {_id:105}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:107}, end: {_id:89}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:60}, end: {_id:65}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:室外布置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:75}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:配置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:100}, end: {_id:103}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:126}, end: {_id:126}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:面]->(end) SET r += row.properties;
+UNWIND [{start: {_id:68}, end: {_id:69}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:是]->(end) SET r += row.properties;
+UNWIND [{start: {_id:104}, end: {_id:101}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_3]->(end) SET r += row.properties;
+UNWIND [{start: {_id:71}, end: {_id:72}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:无法采用]->(end) SET r += row.properties;
+UNWIND [{start: {_id:9}, end: {_id:11}, properties:{}}, {start: {_id:10}, end: {_id:11}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:10}, end: {_id:11}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:61}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:组合]->(end) SET r += row.properties;
+UNWIND [{start: {_id:132}, end: {_id:133}, properties:{}}, {start: {_id:135}, end: {_id:136}, properties:{}}, {start: {_id:135}, end: {_id:139}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:153}, end: {_id:38}, properties:{}}, {start: {_id:153}, end: {_id:39}, properties:{}}, {start: {_id:153}, end: {_id:40}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:45}, end: {_id:120}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:153}, end: {_id:20}, properties:{}}, {start: {_id:153}, end: {_id:21}, properties:{}}, {start: {_id:153}, end: {_id:22}, properties:{}}, {start: {_id:153}, end: {_id:23}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:107}, end: {_id:42}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:153}, end: {_id:29}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:54}, end: {_id:41}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:26}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:41}, end: {_id:99}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:99}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:25}, end: {_id:30}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`<`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:73}, end: {_id:80}, properties:{}}, {start: {_id:73}, end: {_id:81}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:95}, end: {_id:96}, properties:{}}, {start: {_id:96}, end: {_id:95}, properties:{}}, {start: {_id:96}, end: {_id:97}, properties:{}}, {start: {_id:97}, end: {_id:96}, properties:{}}, {start: {_id:97}, end: {_id:98}, properties:{}}, {start: {_id:98}, end: {_id:97}, properties:{}}, {start: {_id:98}, end: {_id:95}, properties:{}}, {start: {_id:95}, end: {_id:98}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:OR]->(end) SET r += row.properties;
+UNWIND [{start: {_id:31}, end: {_id:25}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:31}, end: {_id:25}, properties:{}}, {start: {_id:32}, end: {_id:25}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:2}, end: {_id:5}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`>`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:101}, end: {_id:106}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:24}, end: {_id:25}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:67}, end: {_id:70}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:44}, end: {_id:46}, properties:{}}, {start: {_id:45}, end: {_id:47}, properties:{}}, {start: {_id:44}, end: {_id:50}, properties:{}}, {start: {_id:45}, end: {_id:51}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:55}, end: {_id:60}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:是]->(end) SET r += row.properties;
+UNWIND [{start: {_id:72}, end: {_id:80}, properties:{}}, {start: {_id:72}, end: {_id:81}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:127}, end: {_id:131}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:89}, end: {_id:90}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`>`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:55}, end: {_id:56}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:是]->(end) SET r += row.properties;
+UNWIND [{start: {_id:89}, end: {_id:90}, properties:{}}, {start: {_id:89}, end: {_id:91}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`=`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:6}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:18}, end: {_id:20}, properties:{}}, {start: {_id:18}, end: {_id:22}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:116}, end: {_id:119}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:71}, end: {_id:71}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:内]->(end) SET r += row.properties;
+UNWIND [{start: {_id:124}, end: {_id:1}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:Backward]->(end) SET r += row.properties;
+UNWIND [{start: {_id:156}, end: {_id:122}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:117}, end: {_id:119}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_3]->(end) SET r += row.properties;
+UNWIND [{start: {_id:155}, end: {_id:114}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:156}, end: {_id:120}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:156}, end: {_id:119}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:42}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:115}, end: {_id:104}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:44}, end: {_id:120}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:41}, end: {_id:71}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:关联]->(end) SET r += row.properties;
+UNWIND [{start: {_id:101}, end: {_id:119}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:69}, end: {_id:109}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:5}, end: {_id:13}, properties:{}}, {start: {_id:5}, end: {_id:16}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:140}, end: {_id:65}, properties:{}}, {start: {_id:140}, end: {_id:66}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:140}, end: {_id:105}, properties:{}}, {start: {_id:140}, end: {_id:106}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:140}, end: {_id:46}, properties:{}}, {start: {_id:140}, end: {_id:47}, properties:{}}, {start: {_id:140}, end: {_id:48}, properties:{}}, {start: {_id:140}, end: {_id:49}, properties:{}}, {start: {_id:140}, end: {_id:50}, properties:{}}, {start: {_id:140}, end: {_id:51}, properties:{}}, {start: {_id:140}, end: {_id:52}, properties:{}}, {start: {_id:140}, end: {_id:53}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:140}, end: {_id:70}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:140}, end: {_id:78}, properties:{}}, {start: {_id:140}, end: {_id:79}, properties:{}}, {start: {_id:140}, end: {_id:80}, properties:{}}, {start: {_id:140}, end: {_id:81}, properties:{}}, {start: {_id:140}, end: {_id:82}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:140}, end: {_id:57}, properties:{}}, {start: {_id:140}, end: {_id:58}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:140}, end: {_id:95}, properties:{}}, {start: {_id:140}, end: {_id:96}, properties:{}}, {start: {_id:140}, end: {_id:97}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:134}, end: {_id:13}, properties:{}}, {start: {_id:134}, end: {_id:14}, properties:{}}, {start: {_id:134}, end: {_id:15}, properties:{}}, {start: {_id:134}, end: {_id:16}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:140}, end: {_id:85}, properties:{}}, {start: {_id:140}, end: {_id:86}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:28}, end: {_id:24}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:Backward]->(end) SET r += row.properties;
+UNWIND [{start: {_id:37}, end: {_id:32}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:Backward]->(end) SET r += row.properties;
+UNWIND [{start: {_id:13}, end: {_id:14}, properties:{}}, {start: {_id:14}, end: {_id:13}, properties:{}}, {start: {_id:15}, end: {_id:16}, properties:{}}, {start: {_id:16}, end: {_id:15}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:OR]->(end) SET r += row.properties;
+UNWIND [{start: {_id:123}, end: {_id:126}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:组合]->(end) SET r += row.properties;
+UNWIND [{start: {_id:78}, end: {_id:80}, properties:{}}, {start: {_id:80}, end: {_id:78}, properties:{}}, {start: {_id:79}, end: {_id:81}, properties:{}}, {start: {_id:81}, end: {_id:79}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:OR]->(end) SET r += row.properties;
+UNWIND [{start: {_id:155}, end: {_id:112}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:88}, end: {_id:92}, properties:{}}, {start: {_id:88}, end: {_id:93}, properties:{}}, {start: {_id:88}, end: {_id:94}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`≥`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:87}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:组合]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:83}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:组合]->(end) SET r += row.properties;
+UNWIND [{start: {_id:101}, end: {_id:105}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:8}, end: {_id:20}, properties:{}}, {start: {_id:8}, end: {_id:21}, properties:{}}, {start: {_id:8}, end: {_id:22}, properties:{}}, {start: {_id:8}, end: {_id:23}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:67}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:用于]->(end) SET r += row.properties;
+UNWIND [{start: {_id:7}, end: {_id:20}, properties:{}}, {start: {_id:7}, end: {_id:21}, properties:{}}, {start: {_id:7}, end: {_id:22}, properties:{}}, {start: {_id:7}, end: {_id:23}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:44}, end: {_id:48}, properties:{}}, {start: {_id:45}, end: {_id:49}, properties:{}}, {start: {_id:44}, end: {_id:52}, properties:{}}, {start: {_id:45}, end: {_id:53}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:83}, end: {_id:84}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:采用]->(end) SET r += row.properties;
+UNWIND [{start: {_id:141}, end: {_id:114}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:69}, end: {_id:70}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:141}, end: {_id:120}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:141}, end: {_id:119}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:61}, end: {_id:62}, properties:{}}, {start: {_id:61}, end: {_id:63}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:配有]->(end) SET r += row.properties;
+UNWIND [{start: {_id:104}, end: {_id:116}, properties:{}}, {start: {_id:104}, end: {_id:117}, properties:{}}, {start: {_id:104}, end: {_id:118}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_3]->(end) SET r += row.properties;
+UNWIND [{start: {_id:41}, end: {_id:55}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:141}, end: {_id:112}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:144}, end: {_id:148}, properties:{}}, {start: {_id:144}, end: {_id:149}, properties:{}}, {start: {_id:144}, end: {_id:150}, properties:{}}, {start: {_id:145}, end: {_id:151}, properties:{}}, {start: {_id:145}, end: {_id:152}, properties:{}}, {start: {_id:145}, end: {_id:153}, properties:{}}, {start: {_id:146}, end: {_id:154}, properties:{}}, {start: {_id:146}, end: {_id:155}, properties:{}}, {start: {_id:146}, end: {_id:156}, properties:{}}, {start: {_id:147}, end: {_id:157}, properties:{}}, {start: {_id:147}, end: {_id:158}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:1}, end: {_id:1}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:露天]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:31}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:99}, end: {_id:104}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:11}, end: {_id:18}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:设置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:35}, end: {_id:3}, properties:{}}, {start: {_id:36}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:Backward]->(end) SET r += row.properties;
+UNWIND [{start: {_id:143}, end: {_id:144}, properties:{}}, {start: {_id:143}, end: {_id:145}, properties:{}}, {start: {_id:143}, end: {_id:146}, properties:{}}, {start: {_id:143}, end: {_id:147}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:32}, end: {_id:32}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:第一]->(end) SET r += row.properties;
+UNWIND [{start: {_id:71}, end: {_id:74}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:配备]->(end) SET r += row.properties;
+UNWIND [{start: {_id:89}, end: {_id:113}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`≥`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:71}, end: {_id:73}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:设置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:126}, end: {_id:128}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:设置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:110}, end: {_id:111}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:是]->(end) SET r += row.properties;
+UNWIND [{start: {_id:100}, end: {_id:104}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:141}, end: {_id:109}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:2}, end: {_id:5}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`≤`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:21}, properties:{}}, {start: {_id:3}, end: {_id:23}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:153}, end: {_id:13}, properties:{}}, {start: {_id:153}, end: {_id:14}, properties:{}}, {start: {_id:153}, end: {_id:15}, properties:{}}, {start: {_id:153}, end: {_id:16}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:11}, end: {_id:27}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:设置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:93}, end: {_id:97}, properties:{}}, {start: {_id:94}, end: {_id:98}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:26}, end: {_id:11}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:148}, end: {_id:79}, properties:{}}, {start: {_id:148}, end: {_id:81}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:43}, end: {_id:48}, properties:{}}, {start: {_id:43}, end: {_id:49}, properties:{}}, {start: {_id:43}, end: {_id:52}, properties:{}}, {start: {_id:43}, end: {_id:53}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:84}, end: {_id:85}, properties:{}}, {start: {_id:84}, end: {_id:86}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:102}, end: {_id:106}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:92}, end: {_id:95}, properties:{}}, {start: {_id:93}, end: {_id:96}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:1}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:设置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:8}, end: {_id:14}, properties:{}}, {start: {_id:8}, end: {_id:16}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:25}, end: {_id:4}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`≥`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:7}, end: {_id:13}, properties:{}}, {start: {_id:7}, end: {_id:15}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:1}, end: {_id:2}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:60}, end: {_id:125}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:64}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:Backward]->(end) SET r += row.properties;
+UNWIND [{start: {_id:142}, end: {_id:125}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:4}, end: {_id:40}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:142}, end: {_id:131}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:133}, end: {_id:134}, properties:{}}, {start: {_id:136}, end: {_id:137}, properties:{}}, {start: {_id:136}, end: {_id:138}, properties:{}}, {start: {_id:139}, end: {_id:142}, properties:{}}, {start: {_id:139}, end: {_id:141}, properties:{}}, {start: {_id:139}, end: {_id:140}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:备用]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:18}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:相对布置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:148}, end: {_id:58}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:26}, end: {_id:26}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:任何]->(end) SET r += row.properties;
+UNWIND [{start: {_id:42}, end: {_id:44}, properties:{}}, {start: {_id:42}, end: {_id:45}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:避开]->(end) SET r += row.properties;
+UNWIND [{start: {_id:42}, end: {_id:44}, properties:{}}, {start: {_id:42}, end: {_id:45}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:跨越]->(end) SET r += row.properties;
+UNWIND [{start: {_id:11}, end: {_id:3}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:设置]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:89}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:2}, end: {_id:4}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:`>`]->(end) SET r += row.properties;
+UNWIND [{start: {_id:18}, end: {_id:32}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:组合]->(end) SET r += row.properties;
+UNWIND [{start: {_id:138}, end: {_id:122}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:27}, end: {_id:29}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:33}, end: {_id:38}, properties:{}}, {start: {_id:34}, end: {_id:39}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:O_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:24}, end: {_id:24}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:外缘]->(end) SET r += row.properties;
+UNWIND [{start: {_id:149}, end: {_id:86}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:99}, end: {_id:103}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:P_1]->(end) SET r += row.properties;
+UNWIND [{start: {_id:153}, end: {_id:105}, properties:{}}, {start: {_id:150}, end: {_id:106}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:153}, end: {_id:46}, properties:{}}, {start: {_id:153}, end: {_id:47}, properties:{}}, {start: {_id:153}, end: {_id:48}, properties:{}}, {start: {_id:153}, end: {_id:49}, properties:{}}, {start: {_id:150}, end: {_id:50}, properties:{}}, {start: {_id:150}, end: {_id:52}, properties:{}}, {start: {_id:150}, end: {_id:53}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:包含]->(end) SET r += row.properties;
+UNWIND [{start: {_id:5}, end: {_id:95}, properties:{}}, {start: {_id:5}, end: {_id:96}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:C_2]->(end) SET r += row.properties;
+UNWIND [{start: {_id:123}, end: {_id:55}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+UNWIND [{start: {_id:3}, end: {_id:2}, properties:{}}] AS row
+MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
+MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
+CREATE (start)-[r:属性]->(end) SET r += row.properties;
+:commit
+:begin
+MATCH (n:`UNIQUE IMPORT LABEL`)  WITH n LIMIT 20000 REMOVE n:`UNIQUE IMPORT LABEL` REMOVE n.`UNIQUE IMPORT ID`;
+:commit
+:begin
+DROP CONSTRAINT UNIQUE_IMPORT_NAME;
+:commit
